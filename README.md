@@ -25,6 +25,7 @@ sudo mkdir /opt/cpu_watcher
 sudo cp target/release/cpu_watcher /opt/cpu_watcher/
 ```
 ##SystemD сервис:
+```bash
 sudo tee /etc/systemd/system/cpu_watcher.service <<EOF
 [Unit]
 Description=CPU Usage Monitor
@@ -49,7 +50,7 @@ SyslogIdentifier=cpu_watcher
 [Install]
 WantedBy=multi-user.target
 EOF
-
+```
 
 # Перезагрузить конфигурацию systemd
 sudo systemctl daemon-reload
