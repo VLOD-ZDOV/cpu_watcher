@@ -11,7 +11,27 @@
 - Поддержка переменных окружения для конфигурации
 - Работает как демон через systemd
 
-## Установка
+## Быстрая установка (одной командой)
+
+Интерактивный скрипт соберёт проект, спросит параметры (порог CPU, интервал,
+кулдаун, токен и chat id Telegram), создаст и запустит systemd-сервис.
+
+Требуется Rust (`cargo`) и systemd. Скрипт сам запросит sudo при необходимости.
+
+```bash
+git clone https://github.com/VLOD-ZDOV/cpu_watcher.git
+cd cpu_watcher
+./install.sh
+```
+
+После установки:
+
+```bash
+sudo systemctl status cpu_watcher     # статус
+sudo journalctl -u cpu_watcher -f     # логи
+```
+
+## Установка вручную
 
 ### 1. Сборка из исходников
 
